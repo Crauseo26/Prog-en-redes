@@ -4,20 +4,19 @@
     {
         public void SaveData(string text)
         {
-            Monitor.Enter(this);
-            Console.WriteLine("Database.SaveData -Iniciado");
-
-            Console.WriteLine("Database.SaveData -Ejecutandose");
-
-            throw new Exception("Error");
-            for (int i = 0; i < 100; i++)
+            lock (this)
             {
-                Thread.Sleep(100);
-                Console.Write(text);
-            }
+                Console.WriteLine("Database.SaveData -Iniciado");
 
-            Console.WriteLine("\nDatabase.SaveData -Finalizado");
-            Monitor.Exit(this);
+                Console.WriteLine("Database.SaveData -Ejecutandose");
+                for (int i = 0; i < 100; i++)
+                {
+                    Thread.Sleep(100);
+                    Console.Write(text);
+                }
+
+                Console.WriteLine("\nDatabase.SaveData -Finalizado");
+            }
         }
     }
 }

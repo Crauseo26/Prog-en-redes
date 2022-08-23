@@ -7,29 +7,14 @@
         {
             Console.WriteLine("Hilo de ejecucion secundario #1 -iniciado");
             Console.WriteLine("Hilo de ejecucion secundario #1 -invocando Database.SaveData");
-            try
-            {
-                db.SaveData("x");
-            }
-            catch
-            {
-
-            }
-
+            db.SaveData("x");
             Console.WriteLine("Hilo de ejecucion secundario #1 -retornando desde Output");
         }
         public static void WorkerThreadMethod2()
         {
             Console.WriteLine("Hilo de ejecucion secundario #2 -iniciado");
             Console.WriteLine("Hilo de ejecucion secundario #2 -invocando Database.SaveData");
-            try
-            {
-                db.SaveData("o");
-            }
-            catch
-            {
-
-            }
+            db.SaveData("o");
             Console.WriteLine("Hilo de ejecucion secundario #2 -retornando desde Output");
         }
 

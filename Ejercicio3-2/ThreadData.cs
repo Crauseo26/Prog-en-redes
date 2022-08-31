@@ -21,7 +21,7 @@
             }
 
             Console.WriteLine("\n[Main] Waiting for Add to finish");
-            thread.Join();
+            //thread.Join();
             Console.WriteLine("[Main] the result is {0}", sum.result);
             Console.ReadLine();
 
